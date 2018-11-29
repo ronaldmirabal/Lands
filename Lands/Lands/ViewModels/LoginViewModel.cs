@@ -47,6 +47,8 @@ namespace Lands.ViewModels
         {
             this.IsRemember = true;
             this.IsEnabled = true;
+            this.Email = "ronald@gmail.com";
+            this.Password = "1234";
         }
         #endregion
 

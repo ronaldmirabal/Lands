@@ -89,7 +89,11 @@
                 <StackLayout Orientation="Horizontal" 
                              VerticalOptions="EndAndExpand"
                              HorizontalOptions="Center">
-                    <Image Source="face" WidthRequest="50"></Image>
+                    <Image Source="face" WidthRequest="50">
+                        <Image.GestureRecognizers>
+                          
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Image Source="twitt" WidthRequest="50"></Image>
                     <Image Source="insta" WidthRequest="50"></Image>
                 </StackLayout>

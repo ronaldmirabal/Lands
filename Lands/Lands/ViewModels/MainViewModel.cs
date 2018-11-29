@@ -1,5 +1,6 @@
 ﻿namespace Lands.ViewModels
 {
+    using Models;
     class MainViewModel
     {
         #region ViewModels
@@ -10,7 +11,13 @@
         }
 
         public LandsViewModel Lands
-        { get;
+        {
+            get;
+            set;
+        }
+        public LandsViewModel Land
+        {
+            get;
             set;
         }
         #endregion
@@ -18,6 +25,7 @@
         #region Constructores
         public MainViewModel()
         {
+            instance = this;
             this.Login = new LoginViewModel();
         }
 

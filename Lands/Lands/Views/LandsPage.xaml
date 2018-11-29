@@ -6,11 +6,17 @@
              x:Class="Lands.Views.LandsPage">
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding Lands}"
-            Padding="5">
+            BindingContext="{Binding Lands}">
+            <SearchBar
+                BackgroundColor="Silver"
+                HeightRequest="46"
+                Text="{Binding Filter, Mode=TwoWay}"
+                Placeholder="Search..."
+                SearchCommand="{Binding SearchCommand}">
+            </SearchBar>
 
             <ListView 
-                BackgroundColor="Silver"
+                BackgroundColor="White"
                 HasUnevenRows="true" 
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
@@ -20,23 +26,22 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+
                             <Frame
+                                HasShadow="True"
                                 CornerRadius="20"
-                                HasShadow="true"
-                                Margin="5">
+                                Margin="5"
+                                >
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding SelectLandCommand}"/>
                                 </Frame.GestureRecognizers>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                   
-                                    
                                     <StackLayout 
-                                        Grid.Column="1"
+                                        Grid.Column="0"
                                         VerticalOptions="Center">
                                         <Label 
                                             FontAttributes="Bold"
@@ -50,12 +55,14 @@
                                         </Label>
                                     </StackLayout>
                                     <Image 
-                                        Grid.Column="2"
+                                        Grid.Column="1"
                                         HorizontalOptions="End" 
                                         Source="ic_chevron_right">
                                     </Image>
                                 </Grid>
                             </Frame>
+
+                           
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
