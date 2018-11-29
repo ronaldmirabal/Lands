@@ -8,7 +8,7 @@ namespace Lands.ViewModels
     using Xamarin.Forms;
     using Views;
 
-    class LoginViewModel : BaseViewModel
+    public class LoginViewModel : BaseViewModel
     {
       
 

@@ -1,7 +1,7 @@
 ﻿namespace Lands.ViewModels
 {
     using Models;
-    class MainViewModel
+    public class MainViewModel
     {
         #region ViewModels
         public LoginViewModel Login

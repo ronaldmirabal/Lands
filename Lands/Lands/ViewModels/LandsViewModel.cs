@@ -11,7 +11,7 @@ namespace Lands.ViewModels
     using System.Windows.Input;
     using Xamarin.Forms;
 
-    class LandsViewModel : BaseViewModel
+    public class LandsViewModel : BaseViewModel
     {
 
 

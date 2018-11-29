@@ -4,7 +4,7 @@ namespace Lands.ViewModels
 {
     using Models;
 
-    public class LandViewModels : BaseViewModel
+    public class LandViewModels
     {
         #region Propiedades
         public Land Land
