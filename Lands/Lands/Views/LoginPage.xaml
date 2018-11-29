@@ -2,21 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Login"
+             Title="Lands"
              x:Class="Lands.Views.LoginPage">
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Login}">
-            <StackLayout Padding="10,20,10,5">
-                <Label FontSize="Large" Text="Lands"
-                   HorizontalOptions="Center"
-                   FontAttributes="Bold"/>
+            <StackLayout Padding="5">
 
                 <Image 
                 WidthRequest="100"
                 Source="onu">
                 </Image>
-                <Grid Margin="10"
+                <Grid Margin="10,0"
                   VerticalOptions="Center">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -47,7 +44,12 @@
                 Placeholder="Introduce Tu Contraseña..."></Entry>
 
                 </Grid>
+                <ActivityIndicator
+                    VerticalOptions="CenterAndExpand"
+                    IsRunning="{Binding IsRunning,Mode=TwoWay}">
+                </ActivityIndicator>
                 <StackLayout
+                    VerticalOptions="CenterAndExpand"
                 Orientation="Horizontal">
                     <Label 
                     HorizontalOptions="StartAndExpand"
@@ -55,17 +57,21 @@
                     VerticalOptions="Center"/>
                     <Switch IsToggled="{Binding IsRemember,Mode=TwoWay}" HorizontalOptions="End"/>
                 </StackLayout>
+                <Label 
+                    HorizontalOptions="Center"
+                    TextColor="Blue"
+                    Text="No Pillaste la Contraseña?"/>
 
-                <ActivityIndicator
-                    IsRunning="{Binding IsRunning,Mode=TwoWay}"
-                    VerticalOptions="CenterAndExpand">
-                </ActivityIndicator>
 
-                <StackLayout Margin="40,0">
+                <StackLayout
+                    Orientation="Horizontal"
+                    Margin="40,0">
                     <Button 
                 BorderRadius="23"
                 TextColor="White"
-                        Command="{Binding LoginCommand}"
+                 HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                  Command="{Binding LoginCommand}"
                 HeightRequest="46"
                 BackgroundColor="Navy"
                 Text="Login"/>
@@ -73,12 +79,16 @@
                     <Button 
                 BorderRadius="23"
                 TextColor="White"
+                HorizontalOptions="FillAndExpand"
                 HeightRequest="46"
+                 IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                 BackgroundColor="Purple"
                 Text="Registrate"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Orientation="Horizontal" 
+                             VerticalOptions="EndAndExpand"
+                             HorizontalOptions="Center">
                     <Image Source="face" WidthRequest="50"></Image>
                     <Image Source="twitt" WidthRequest="50"></Image>
                     <Image Source="insta" WidthRequest="50"></Image>
@@ -86,7 +96,7 @@
             </StackLayout>
 
         </ScrollView>
-           
-        
+
+
     </ContentPage.Content>
 </ContentPage>
