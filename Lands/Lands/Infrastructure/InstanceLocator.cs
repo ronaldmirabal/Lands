@@ -2,7 +2,7 @@
 {
     using ViewModels;
    
-    class InstanceLocator
+    public class InstanceLocator
     {
 
         #region Propiedades
